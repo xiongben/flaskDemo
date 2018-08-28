@@ -6,6 +6,8 @@ from flask import Flask,request
 from flask_restful import Resource,Api, reqparse, fields, marshal_with
 from flask_cors import *
 
+from flask_socketio import SocketIO, emit
+
 from user import User
 
 
@@ -51,6 +53,7 @@ class HelloWorld(Resource):
     def get(self):
         args = parser.parse_args()
         return {'hello':args['name']}
+        
 
 class TodoSimple(Resource):
     def get(self,todo_id):
@@ -68,3 +71,4 @@ api.add_resource(User,'/User','/User/<string:id>')
 
 if __name__ == '__main__':
     app.run()
+    

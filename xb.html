@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+</head>
+
+<body>
+    <h1>给力啊，大力出奇迹</h1>
+    <input class="test1">
+    <button class="test2">send</button>
+    <!-- <iframe src="loopsmozat://util/openAppPage?pageName=cashout"></iframe> -->
+    <!-- <script src="jquery.js"></script>
+    <script src="common.js"></script> -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="socket.io.js"></script>
+    <script>
+    $(function(){
+ 
+        var websocket_url = 'http://localhost:5000/test';
+        var socket = io.connect(websocket_url);
+        console.log("ss");
+        // socket.emit('my event', {'mess': 'xiongda'});
+        socket.on('myResponse', function(data){
+            console.log(data);
+        })
+
+        $(".test2").click(function(){
+            var val = $(".test1").val();
+            var params = {
+                mess: val,
+                room: 1,
+            }
+            socket.emit('my event', params);
+        })
+    })
+    </script>
+    
+</body>
+
+</html>
