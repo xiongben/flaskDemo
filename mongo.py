@@ -8,7 +8,7 @@ class Mongo(object):
     def get_instance():
         if Mongo.___instance is None:
             url = 'mongodb://localhost:27017/'
-            Mongo.___instance = pymongo.MongoClient(url).local
+            Mongo.___instance = pymongo.MongoClient(url).xiongben
         return Mongo.___instance
 
 def mongo():

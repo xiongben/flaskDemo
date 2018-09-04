@@ -1,5 +1,6 @@
 from mongo import mongo
 from bson.objectid import ObjectId
+from flask_restful import Resource,Api, reqparse, fields, marshal_with
 
 
 class UserModeldd:
@@ -20,12 +21,17 @@ class UserModeldd:
         res = self.mongo.xiongben.insert(data2)
         return res
 
-class TestModel:
+class TestModel(Resource):
     def __init__(self):
         pass
 
     def testxb(self):
         print 'testxb'
+
+    def get(self):
+        # args = parser.parse_args()
+        return {'hello':"world"}
+
 
 
 __all__ = ['UserModeldd', 'TestModel']

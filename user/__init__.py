@@ -21,7 +21,7 @@ parser.add_argument('age')
 
 class User(Resource):
     def __init__(self):
-        self.model = UserModeldd()
+        self.model = UserModel()
     def get(self):
         args = parser.parse_args()
         type = args['type']

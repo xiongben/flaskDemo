@@ -8,9 +8,11 @@ from flask_cors import *
 
 from flask_socketio import SocketIO, emit
 
-from user import User
+# from user import User
+from user import *
+from login import *
 
-
+print TestModel
 
 resource_fields = {
     'task': fields.String,
@@ -68,6 +70,10 @@ api.add_resource(Todo,'/resourse/aa',endpoint = 'todo_ep')
 api.add_resource(TodoSimple, '/todo/<string:todo_id>')
 
 api.add_resource(User,'/User','/User/<string:id>')
+api.add_resource(TestModel,'/User/test')
+
+# login area
+api.add_resource(Login,'/login')
 
 if __name__ == '__main__':
     app.run()
