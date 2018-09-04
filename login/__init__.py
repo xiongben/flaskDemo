@@ -30,10 +30,16 @@ class Login(Resource):
 class Register(Resource):
     def __init__(self):
         self.model = LoginModel()
-    def post(self):
+    def get(self):
         args = request.args
         params = {
             'user': args['name'],
             'password': args['password']
         }
-        
+        print params
+        try:
+            res = self.model.register(params)
+            result = {'code': 0, 'data': "success"}
+        except BaseException as error:
+            result = {'code': 1, 'data': str(error)}
+        return result

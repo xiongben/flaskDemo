@@ -74,6 +74,7 @@ api.add_resource(TestModel,'/User/test')
 
 # login area
 api.add_resource(Login,'/login')
+api.add_resource(Register,'/register')
 
 if __name__ == '__main__':
     app.run()
