@@ -1,0 +1,8 @@
+2018-09-08 23:06:18,105 - __main__ - INFO - Start print log
+2018-09-08 23:06:19,393 - __main__ - INFO - Start print log
+2018-09-08 23:06:44,037 - __main__ - INFO - Start print log
+2018-09-08 23:06:52,954 - __main__ - INFO - info log
+2018-09-08 23:06:52,955 - __main__ - WARNING - something maybe fail
+2018-09-08 23:07:12,743 - __main__ - INFO - Start print log
+2018-09-08 23:07:18,706 - __main__ - INFO - info log
+2018-09-08 23:07:18,706 - __main__ - WARNING - something maybe fail,test,xiongben

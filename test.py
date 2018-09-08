@@ -7,6 +7,34 @@ from flask_restful import Resource,Api, reqparse, fields, marshal_with
 from flask_cors import *
 
 from flask_socketio import SocketIO, emit
+import logging
+from logging.handlers import RotatingFileHandler
+
+#logging set
+logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logger.setLevel(level = logging.INFO)
+
+rHandler = RotatingFileHandler("log.txt",maxBytes=1*1024,backupCount=3)
+rHandler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+rHandler.setFormatter(formatter)
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+console.setFormatter(formatter)
+logger.addHandler(rHandler)
+logger.addHandler(console)
+
+# handle = logging.FileHandler('flask.txt')
+# handle.setLevel(logging.INFO)
+
+# handle.setFormatter(formatter)
+# logger.addHandler(handle)
+# logger.info("Start print log")
+# logger.debug("Do something")
+# logger.warning("something maybe fail")
+# logger.info("Finish")
+
 
 # from user import User
 from user import *
@@ -53,6 +81,8 @@ class Todo(Resource):
 
 class HelloWorld(Resource):
     def get(self):
+        logger.info('info log');
+        logger.warning("something maybe fail,test,xiongben")
         args = parser.parse_args()
         return {'hello':args['name']}
         
