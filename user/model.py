@@ -20,3 +20,8 @@ class UserModel:
         res = self.mongo.xiongben.insert(data2)
         return res
         
+class LoginModel:
+    def __init__(self, *args, **kwargs):
+        return super().__init__(*args, **kwargs)
+    def test(self):
+        return ""

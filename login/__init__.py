@@ -13,7 +13,7 @@ class Login(Resource):
 
     def get(self):
         args = request.args
-        print args
+        print (args)
         params = {
             'user': args['name'],
             'password': args['password']
@@ -36,7 +36,7 @@ class Register(Resource):
             'user': args['name'],
             'password': args['password']
         }
-        print params
+        
         try:
             res = self.model.register(params)
             result = {'code': 0, 'data': "success"}
