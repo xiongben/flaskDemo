@@ -39,11 +39,12 @@ logger.addHandler(console)
 
 
 # from user import User
-from user import *
-from login import *
+# from user import *
+# from login import *
 
 
-print TestModel
+# print TestModel
+
 
 resource_fields = {
     'task': fields.String,
@@ -108,15 +109,15 @@ class TodoSimple(Resource):
         return {todo_id:todos[todo_id]}
 
 api.add_resource(HelloWorld,'/')
-api.add_resource(Todo,'/resourse/aa',endpoint = 'todo_ep')
-api.add_resource(TodoSimple, '/todo/<string:todo_id>')
+# api.add_resource(Todo,'/resourse/aa',endpoint = 'todo_ep')
+# api.add_resource(TodoSimple, '/todo/<string:todo_id>')
 
-api.add_resource(User,'/User','/User/<string:id>')
-api.add_resource(TestModel,'/User/test')
+# api.add_resource(User,'/User','/User/<string:id>')
+# api.add_resource(TestModel,'/User/test')
 
-# login area
-api.add_resource(Login,'/login')
-api.add_resource(Register,'/register')
+# # login area
+# api.add_resource(Login,'/login')
+# api.add_resource(Register,'/register')
 
 if __name__ == '__main__':
     app.run()

@@ -12,12 +12,14 @@ class Login(Resource):
         self.model = LoginModel()
 
     def get(self):
-        # args = request.args
-        # print args
-        # params = {
-        #     'user': args['name'],
-        #     'password': args['password']
-        # }
+
+        args = request.args
+        print (args)
+        params = {
+            'user': args['name'],
+            'password': args['password']
+        }
+
         try:
             # res = self.model.login(params)
             res = self.model.login()
@@ -38,7 +40,7 @@ class Register(Resource):
             'user': args['name'],
             'password': args['password']
         }
-        print params
+        
         try:
             res = self.model.register(params)
             result = {'code': 0, 'data': "success"}

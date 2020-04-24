@@ -26,7 +26,7 @@ class TestModel(Resource):
         pass
 
     def testxb(self):
-        print 'testxb'
+        print ('testxb')
 
     def get(self):
         # args = parser.parse_args()

@@ -9,8 +9,11 @@ class LoginModel:
 
         # res = self.mongo.user_login.find_one({'name':params['user'],'password':params['password']})
         # res = self.mongo.user_login.find_one({'name':params['user'],'password': params['password']},{'name':1,'_id':0})
-        res = list(self.mongo.user_login.find())
-        print res
+       
+
+        res = self.mongo.user_login.find_one({'name':params['user'],'password': params['password']},{'name':1,'_id':0})
+        
+
         return res
 
     def register(self, params):
