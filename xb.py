@@ -1,4 +1,4 @@
-from flask import Flask,request,session
+from flask import Flask,request,session,Response
 from flask_socketio import SocketIO,emit,join_room,leave_room
 import threading
 
@@ -12,7 +12,12 @@ app.debug = True
 @app.route('/')
 def index():
     # return render_template('index.html')
-    return "ok"
+    res = Response("6666")
+    res.headers['Access-Control-Allow-Origin'] = "http://localhost:8080"
+    res.headers['Access-Control-Allow-Credentials'] = "true"
+    #res.set_cookie("xb", value='', max_age=None, expires=None, path='/', domain=None, secure=True, httponly=False, samesite='Lax')
+    res.headers.add('Set-Cookie','cross-site-cookie=bar; SameSite=None; Secure')
+    return res
 
 @socketio.on('my event', namespace='/test')
 def test_message(message):

@@ -1,3 +1,13 @@
-2018-09-08 23:18:57,000 - __main__ - WARNING - something maybe fail,test,xiongben
-2018-09-08 23:19:05,784 - __main__ - INFO - info log
-2018-09-08 23:19:05,784 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-21 16:58:37,961 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-21 16:58:39,852 - __main__ - INFO - info log
+2019-01-21 16:58:39,852 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-21 16:58:40,750 - __main__ - INFO - info log
+2019-01-21 16:58:40,750 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-21 16:58:57,411 - __main__ - INFO - info log
+2019-01-21 16:58:57,411 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-21 16:58:59,200 - __main__ - INFO - info log
+2019-01-21 16:58:59,200 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-01-22 10:08:58,521 - __main__ - INFO - info log
+2019-01-22 10:08:58,522 - __main__ - WARNING - something maybe fail,test,xiongben
+2019-06-28 15:00:27,555 - __main__ - INFO - info log
+2019-06-28 15:00:27,556 - __main__ - WARNING - something maybe fail,test,xiongben

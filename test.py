@@ -10,6 +10,8 @@ from flask_socketio import SocketIO, emit
 import logging
 from logging.handlers import RotatingFileHandler
 
+from flask_sqlalchemy import SQLAlchemy
+
 #logging set
 logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -40,6 +42,7 @@ logger.addHandler(console)
 from user import *
 from login import *
 
+
 print TestModel
 
 resource_fields = {
@@ -58,10 +61,19 @@ CORS(app, supports_credentials=True)
 app.debug = True
 
 
+app.config['SECRET_KEY'] ='hard to guess'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:xB$12345678@127.0.0.1:3306/flasktest'
+#设置这一项是每次请求结束后都会自动提交数据库中的变动
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN']=True
+#实例化
+db = SQLAlchemy(app)
+
 
 api = Api(app)
 
 todos = {}
+
+
 
 # @app.route('/')
 # def hello_world():
@@ -81,10 +93,10 @@ class Todo(Resource):
 
 class HelloWorld(Resource):
     def get(self):
-        logger.info('info log');
-        logger.warning("something maybe fail,test,xiongben")
-        args = parser.parse_args()
-        return {'hello':args['name']}
+        # logger.info('info log');
+        # logger.warning("something maybe fail,test,xiongben")
+        return {'hello': 'you'}
+        # return {'hello':args['name']}
         
 
 class TodoSimple(Resource):

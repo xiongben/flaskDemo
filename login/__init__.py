@@ -12,15 +12,17 @@ class Login(Resource):
         self.model = LoginModel()
 
     def get(self):
-        args = request.args
-        print args
-        params = {
-            'user': args['name'],
-            'password': args['password']
-        }
+        # args = request.args
+        # print args
+        # params = {
+        #     'user': args['name'],
+        #     'password': args['password']
+        # }
         try:
-            res = self.model.login(params)
-            result = {'code':0,'data':str(res)}
+            # res = self.model.login(params)
+            res = self.model.login()
+            res = formaterRes(res)
+            result = {'code':0,'data':res}
         except BaseException as error:
             result = {'code':1,'data':str(error)}   
         
@@ -43,3 +45,10 @@ class Register(Resource):
         except BaseException as error:
             result = {'code': 1, 'data': str(error)}
         return result
+
+
+def formaterRes(res):
+    for item in res:
+        if item.has_key('_id'):
+            item['_id'] = str(item['_id'])
+    return res
